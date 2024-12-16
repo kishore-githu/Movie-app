@@ -1,0 +1,207 @@
+/* General app styles */
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  background-color: #000000; /* Changed body background to black */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff; /* Set text color to white for contrast */
+}
+
+/* Button styles */
+button {
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  background-color: #ff69b4; /* Changed to pink */
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #ff1493; /* Darker pink on hover */
+  transform: scale(1.05); /* Added scale effect on hover */
+}
+
+/* Search form styles */
+.search-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 250px;
+  transition: border-color 0.3s ease;
+}
+
+.search-form input:focus {
+  border-color: #8a2be2; /* SlateBlue focus effect */
+}
+
+.search-form button {
+  background-color: #4169e1; /* Changed to blue */
+}
+
+/* Uniform sizing for movie cards */
+.movie-card {
+  display: inline-block;
+  width: 220px;
+  height: 420px;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: #6a5acd; /* SlateBlue */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  perspective: 1000px; /* Added perspective to create depth */
+}
+
+/* 3D hover effect */
+.movie-card:hover {
+  transform: rotateY(15deg) rotateX(15deg); /* Rotate the card for 3D effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Movie poster styles */
+.movie-poster {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.movie-poster:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Add/Remove buttons */
+.add-btn, .remove-btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.add-btn {
+  background-color: #4169e1; /* Blue */
+}
+
+.remove-btn {
+  background-color: #f44336; /* Red */
+}
+
+.add-btn:hover {
+  opacity: 0.8;
+  background-color: #4682b4; /* Slightly darker blue */
+}
+
+.remove-btn:hover {
+  opacity: 0.8;
+  background-color: #d32f2f; /* Darker red */
+}
+
+/* Rating input styling */
+.movie-card label {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.movie-card input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  font-size: 14px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.movie-card input[type="number"]:focus {
+  border-color: #ff69b4; /* Pink border on focus */
+}
+
+/* Animated watchlist container */
+.watchlist-container {
+  margin-top: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated section toggle */
+button {
+  margin-bottom: 20px;
+  animation: buttonPulse 1s infinite alternate;
+}
+
+@keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Fade in-out for section change */
+.search-results, .watchlist-container {
+  transition: opacity 0.5s ease;
+}
+
+/* Floating effect for movie cards */
+.movie-card {
+  animation: floatCard 3s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Glow effect for movie card titles */
+.movie-card h3 {
+  font-size: 18px;
+  transition: text-shadow 0.3s ease;
+}
+
+.movie-card h3:hover {
+  text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
+}
+
+/* Glow effect for buttons */
+.add-btn, .remove-btn {
+  animation: glowButton 1.5s infinite alternate;
+}
+
+@keyframes glowButton {
+  0% {
+    box-shadow: 0 0 5px #fff;
+  }
+  100% {
+    box-shadow: 0 0 20px #ff69b4; /* Pink glow */
+  }
+}
+
+
